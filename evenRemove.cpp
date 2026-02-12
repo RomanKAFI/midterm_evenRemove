@@ -22,6 +22,12 @@ node *mysteryAdd(node *head, const int &val) {
 
 node *evenRemove(node *head) {
    /* Add your code here */
+   if (head == nullptr) {
+    return nullptr;
+   }
+
+   head->next = evenRemove(head->next);
+   return head;
 }
 
 void nodeTest()
